@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- font awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- google fonts link -->
+  <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Lato:wght@100;300;400;700&family=Oxanium:wght@400;500;600;700&family=Tektur:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- style.css link -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <title>Sensho Landing Page1</title>
+</head>
+<body>
+  <header>
+    <!-- hero section -->
+  <section class="hero-section">
+    <!-- nav bar -->
+    <nav>
+      <!-- nav logo -->
+      <div class="logo">
+        <a href="#" class="logo-link">
+          <img src="/img/Nav logo eng light.svg" alt="Logo" class="logo-img" id="logo1">
+          <img src="/img/Nav logo jap light.svg" alt="Logo" class="logo-img" id="logo2">
+          <img src="/img/nav logo eng dark.svg" alt="Logo" class="logo-img" id="logo3">
+          <img src="/img/nav logo jap dark.svg" alt="Logo" class="logo-img" id="logo4">
+        </a>
+      </div>
+<!-- social icons and theme toggler -->
+      <div class="social-icons">
+        <div class="twitter-icon">
+        <a href="#" class="twitter-link">
+          <img src="/img/Twitter light.svg" alt="Twitter" class="twitter1">
+          <img src="/img/Twitter dark.svg" alt="Twitter" class="twitter2">
+        </a>
+      </div>
+        <div class="toggle-container">
+          <input type="checkbox" id="theme-toggle">
+          <label for="theme-toggle" class="toggle"></label>
+        </div>
+      </div>
+    </nav>
+
+    <!-- waves div -->
+    <div class="wave-img">
+      <img class="wave1" src="/img/Animating waves copy1 copy.svg" alt="Wave 1">
+    </div>
+    <div class="wave-img">
+      <img class="wave2" src="/img/Animating waves copy2.svg" alt="Wave 2">
+    </div>
+
+    <!-- message div -->
+    <div class="message">
+      <h2>
+        Research<br>
+        <span class="italics">driven</span><br>
+        Crypto Collective
+      </h2>
+    </div>
+
+    <!-- scroll div -->
+    <div class="scroll-button">
+      <a href="#main-section" class="scroll-link">
+        <img src="/img/scroll button1.svg" alt="Scroll">
+      </a>
+    </div>
+
+  </section>
+</header>
+
+<!-- main section -->
+  <section id="main-section">
+<!-- section heading and tagline -->
+    <div class="container">
+      <h2 class="section-heading">Tools to navigate on chain alpha</h2>
+      <p class="tagline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet quis dui ac commodo. Morbi semper vel justo id pharetra</p>
+      <div class="buttons">
+        <button class="btn1">Insights</button>
+        <button class="btn2">Alpha Bot</button>
+      </div>
+<!-- floating text fields -->
+      <div class="text-fields">
+        <div class="text-field field1">Lorem ipsum dolor sit amet</div>
+        <div class="text-field field2">consectetur adipiscing elit</div>
+        <div class="text-field field3">Cras ac dolor metus</div>
+        <div class="text-field field4">Donec euismod, odio ac</div>
+        <div class="text-field field5">Morbi semper vel justo id</div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const heroSection = document.querySelector('.hero-section');
+    const mainSection = document.getElementById('main-section');
+
+    themeToggle.addEventListener('change', () => {
+      if (themeToggle.checked) {
+        heroSection.classList.add('light-theme');
+        mainSection.classList.add('light-theme');
+      } else {
+        heroSection.classList.remove('light-theme');
+        mainSection.classList.remove('light-theme');
+      }
+    });
+
+    // Function to show the message
+function showMessage() {
+  const message = document.querySelector('.message h2');
+  message.style.opacity = '1'; // Set the opacity to 1 to make it visible
+}
+
+// Wait for the document to fully load
+document.addEventListener('DOMContentLoaded', () => {
+  // Set a timeout to show the message after 5 seconds
+  setTimeout(showMessage, 2000); // 2000 milliseconds = 2 seconds
+});
+
+
+  </script>
+
+
+
+  <!-- <script>
+    const themeToggle = document.getElementById('theme-toggle');
+const landingPage = document.querySelector('.landing-page');
+
+themeToggle.addEventListener('change', () => {
+  if (themeToggle.checked) {
+    landingPage.classList.add('dark-theme');
+  } else {
+    landingPage.classList.remove('dark-theme');
+  }
+});
+
+  </script> -->
+
+</body>
+</html>

@@ -1,0 +1,592 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Lato, sans-serif;
+}
+
+/* hero section styles */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url("/img/background1.svg");
+}
+
+/* hero section light theme styles */
+.light-theme {
+  background-image: url("/img/background\ light.svg");
+}
+
+
+/* Navigation bar styles */
+nav {
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  /* color: #fff; */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+/* Navbar logo styles */
+.logo-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.logo img {
+  position: absolute; /* Add absolute positioning to the logo images */
+  top: 0; /* Align the logos to the top */
+  left: 0; /* Align the logos to the left */
+  opacity: 1; /* Initially, Logo1 is visible */
+  transition: opacity 0.30s ease; /* Add the transition for opacity */
+  padding: 20px;
+  width: 100px;
+}
+
+#logo2 {
+  opacity: 0; /* Initially, Logo2 is hidden */
+  width: 70px;
+}
+
+.logo-link:hover #logo1 {
+  opacity: 0; /* Hide Logo1 on hover */
+}
+
+.logo-link:hover #logo2 {
+  opacity: 1; /* Show Logo2 on hover */
+}
+
+#logo3 {
+  opacity: 0;
+}
+
+#logo4 {
+  opacity: 0;
+  width: 70px;
+}
+
+/* light theme styles for logo */
+.light-theme #logo1 {
+  display: none;
+}
+
+.light-theme #logo2 {
+  display: none;
+}
+
+.light-theme .logo img {
+
+  transition: opacity 0.30s ease; /* Add the transition for opacity */
+}
+
+.light-theme #logo3 {
+  opacity: 1;
+}
+
+.light-theme .logo-link:hover #logo3 {
+  opacity: 0; /* Hide Logo1 on hover */
+}
+
+.light-theme .logo-link:hover #logo4 {
+  opacity: 1; /* Show Logo2 on hover */
+}
+
+
+/* Navbar - Social Icon and Theme Toggle styles */
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+.twitter-link {
+  position: relative;
+  display: inline-block;
+}
+
+.twitter1,
+.twitter2 {
+  position: absolute;
+  top: -17px;
+  left: -50px;
+  right: 0;
+  width: 25px;
+  height: 25px;
+}
+
+/* light theme for twitter icon */
+.twitter2 {
+  opacity: 0;
+}
+
+.light-theme .twitter1 {
+  opacity: 0;
+}
+
+.light-theme .twitter2 {
+  opacity: 1;
+}
+
+/* toggle styles */
+.toggle-container {
+  position: relative;
+}
+
+.toggle-container .toggle {
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  background-color: #edeae4;
+  border: 2px solid #93A603;
+  border-radius: 20px;
+  /* margin: 0 20px; */
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#theme-toggle {
+  display: none;
+}
+
+/* Add sun icon for light theme */
+.toggle::before {
+  content: '\2600'; /* Unicode character for sun (☀) */
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translate(0, -50%);
+  font-size: 20px;
+  color: #687314;
+}
+
+/* Add half-moon icon for dark theme */
+.toggle-container input[type="checkbox"]:checked + .toggle {
+  background-color: #333; /* Background color for dark theme */
+}
+
+/* Customize icon color for dark theme */
+.toggle-container input[type="checkbox"]:checked + .toggle::before {
+  content: '\263D'; /* Unicode character for half-moon (☽) */
+  color: #f9f9f9; /* Icon color for dark theme */
+}
+
+/* Styles for the waves */
+.wave-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.wave1 {
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+}
+
+.wave2
+{
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+}
+
+/* Animation for the waves */
+.wave1 .wave2 {
+  /* width: 100%;
+  height: 150px; */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.wave1 {
+  animation: moveWave1 15s infinite;
+}
+
+@keyframes moveWave1 {
+  0%, 100% {
+    transform: translateY(-150px);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
+
+.wave2 {
+  animation: moveWave2 15s infinite;
+}
+
+@keyframes moveWave2 {
+  0%, 100% {
+    transform: translateY(-150);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
+
+/* hero section message styles */
+.message {
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+}
+
+.message h2 {
+  opacity: 0;
+  font-family: 'Tektur';
+  color: #f2f2f2;
+  font-size: 125px;
+  font-weight: 400;
+  transition: opacity 3s ease-in-out; /* Add a transition for a smooth fade-in effect */
+}
+
+/* Italics styles for "the best" */
+.message h2 .italics {
+  font-style: italic;
+  color: #888;
+
+
+  /* background: linear-gradient(to right, #088C7F,
+  #F2CB05, #F2B807, #8C6A04); */
+  background: linear-gradient(to right,
+  #C0D904, #687314, #93A603);
+  /* background: linear-gradient(to right, #f32170,
+                    #ff6b08, #cf23cf); */
+  -webkit-text-fill-color: transparent;
+ -webkit-background-clip: text;
+  font-weight: bolder;
+}
+
+/* light theme styles for hero section message */
+.light-theme .message h2 {
+  font-family: 'Tektur';
+  color: #3e3e3e;
+  font-size: 125px;
+  font-weight: 400;
+}
+
+/* Scroll button styles */
+.scroll-button {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.scroll-button img {
+  width: 50px;
+}
+
+.scroll-button a {
+  display: inline-block;
+  padding: 10px;
+  /* background-color: #007bff; */
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  animation: flickerAnimation 3s infinite; /* Add the flickering animation */
+}
+
+.scroll-button a:hover {
+  background-color: #333;
+}
+
+/* Flickering animation for scroll button */
+@keyframes flickerAnimation {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* styles for main section */
+#main-section {
+  background-color: #222121;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  position: relative;
+}
+
+.section-heading {
+  font-family: 'Tektur';
+  font-size: 80px;
+  font-weight: 800;
+  margin-bottom: 2px;
+  color: #f2f2f2;
+}
+
+.tagline {
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 22px;
+  color: #888;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.btn1 {
+  background-color: #687314;
+  border: 1px solid #C0D904;
+  color: #f2f2f2;
+  padding: 12px 50px;
+  /* border: none; */
+  border-radius: 50px;
+  margin: 20px 10px;
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn2 {
+  background-color: #333;
+  border: 1px solid #93A603;
+  color: #f2f2f2;
+  padding: 12px 50px;
+  /* border: none; */
+  border-radius: 50px;
+  margin: 20px 10px;
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* main section light theme styles */
+#main-section .light-theme {
+  background-color: #e1dac8;
+}
+
+.light-theme .section-heading {
+  color: #222121;
+}
+
+.light-theme .btn2 {
+  background-color: #e1dac8;
+  border: 1px solid #93A603;
+  color: #222121;
+}
+
+/* text field styles */
+.text-field {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 225px;
+  height: 35px;
+  background-color: #333;
+  color: #bbb8b8;
+  font-family: 'Lato';
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 10px; /* Slightly rounded border */
+  opacity: 0.8;
+  animation-name: floatAnimation; /* Add the float animation */
+  animation-duration: 3s; /* Duration of the animation */
+  animation-timing-function: ease-in-out; /* Easing function */
+  animation-iteration-count: infinite; /* Infinite animation */
+}
+
+/* Float Animation for text field */
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.field1 {
+  top: 83px;
+  left: 100px;
+}
+
+.field2 {
+  top: 175px;
+  right: 450px;
+}
+
+.field3 {
+  bottom: 150px;
+  left: 80px;
+}
+
+
+.field4 {
+  bottom: 100px;
+  right: 100px;
+
+}
+
+.field5 {
+  top: 83px;
+  right: 100px;
+
+}
+
+
+/* Media Query for Mobile Devices */
+@media (max-width: 767px) {
+  /* Styles for the hero section - Mobile specific background and height */
+  #hero {
+    background-image: url("/img/background\ mobile.svg");
+    height: 100vh; /* Adjust the height for mobile devices */
+    width: 100vw;
+  }
+
+  .logo img {
+    height: 20px;
+    opacity: 1;
+    transition: opacity 0.30s ease;
+  }
+
+  #logo2 {
+    opacity: 0; /* Initially, Logo2 is hidden */
+    width: 70px;
+  }
+
+  .logo-link:hover #logo1 {
+    opacity: 0; /* Hide Logo1 on hover */
+  }
+
+  .logo-link:hover #logo2 {
+    opacity: 1; /* Show Logo2 on hover */
+  }
+
+  #logo3 {
+    opacity: 0;
+  }
+
+  #logo4 {
+    opacity: 0;
+    width: 70px;
+  }
+
+
+  .social-icons img {
+    height: 15px;
+  }
+
+  /* Styles for the waves - Mobile specific wave image */
+  .wave-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: -60px auto;
+    text-align: center;
+  }
+
+  .wave-img img{
+    content: url("/img/animating\ waves\ mobile\ top.svg");
+    content: url("/img/animating\ waves\ mobile\ top.svg");
+  }
+
+  /* hero section message mobile styles */
+  .message h2 {
+    font-family: 'Tektur';
+    color: #c3c3c1;
+    font-size: 60px;
+    font-weight: 700;
+  }
+  .message {
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+  }
+
+  /* message light theme mobile styles */
+  .light-theme .message h2 {
+    font-family: 'Tektur';
+    color: #3e3e3e;
+    font-size: 60px;
+    font-weight: 700;
+  }
+
+/* main section mobile styles */
+  #main-section {
+    height: 100vh; /* Adjust the height for mobile devices */
+    padding: 30px 0;
+  }
+
+  .section-heading {
+    font-family: 'Tektur';
+    font-size: 40px; /* Adjust the font size for mobile devices */
+  }
+
+  .tagline {
+    font-size: 12px; /* Adjust the font size for mobile devices */
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    padding: 10px 50px; /* Adjust the button padding for mobile devices */
+    font-size: 14px; /* Adjust the font size for mobile devices */
+  }
+  .text-field {
+    width: 160px; /* Adjust the width of the text fields for mobile devices */
+    height: 30px; /* Adjust the height of the text fields for mobile devices */
+    font-size: 12px; /* Adjust the font size of the text fields for mobile devices */
+  }
+
+  /* Adjust the positions of the text fields for mobile devices */
+  .field1 {
+    bottom: 100px;
+    left: 26px;
+  }
+
+  .field2 {
+    top: 218px;
+    right: 58px;
+  }
+
+  .field3 {
+    top: 710px;
+    left: 42px;
+  }
+
+  .field4 {
+    top: 655px;
+    right: 22px;
+  }
+  .field5 {
+    top: 48px;
+    right: 26px;
+  }
+}
